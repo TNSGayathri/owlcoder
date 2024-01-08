@@ -1,0 +1,14 @@
+n=int(input())
+i=0
+l=[]
+while i<32:
+    l.append(n&1)
+    n=n>>1
+    i+=1
+l=l[::-1]
+j,d=0,0
+for i in l:
+    if i==1:
+        d+=2**j
+    j+=1
+print(d)
