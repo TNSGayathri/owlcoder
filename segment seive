@@ -1,0 +1,28 @@
+def prime(n):
+    l=[1 for i in range(n+1)]
+    l[0],l[1]=0,0
+    m=[]
+    for i in range(2,int(n**0.5)+1):
+        if(l[i]==1):
+            for j in range(i*i,n+1,i):
+                l[j]=0
+    for i in range(2,len(l)):
+        if(l[i]==1):
+            m.append(i)
+    return m
+a=210
+b=234
+s=prime(int(b**0.5))
+m=[i for i in range(a,b+1)]
+for i in s:
+    if(a!=i and a%i==0):
+        for j in range(0,len(m),i):
+            m[j]=0
+    else:
+        c=((a//i)*i)+i
+        k=(c-a)
+        for j in range(k,len(m),i):
+            m[j]=0
+for i in m:
+    if(i!=0):
+        print(i,end=" ")
