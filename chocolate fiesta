@@ -1,0 +1,29 @@
+mod=1000000007
+def solve(a):
+    # Write your code here
+    def pow(b):
+        ans=1
+        a=2
+        while b:
+            if(b%2!=0):
+                b=b-1
+                ans=(ans*a)%mod
+            else:
+                b=b//2
+                a=(a*a)
+        return ans%mod
+    e=0
+    o=0
+    for i in a:
+        if i%2==0:
+            e+=1
+        else:
+            o+=1
+    ep=0
+    op=0
+    if(e!=0):
+        ep=(pow(e)-1)
+    if(o!=0):
+        op=((pow(o-1))-1)
+    eo=op*ep
+    return (ep+op+eo)%mod
