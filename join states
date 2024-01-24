@@ -1,0 +1,25 @@
+# cook your dish here
+for i in range(int(input())):
+    a,b=map(int,input().split())
+    l=list(map(int,input().split()))
+    j=0
+    s=0
+    c=0
+    while(j<a):
+        if(l[j]<b):
+            s+=l[j]
+            if(s>=b):
+                c+=1
+                s=0
+        elif(s==0 and l[j]>=b):
+            c+=1 
+        else:
+            s+=l[j]
+            if(s>=b):
+                c+=1
+                s=0
+        j+=1
+    print(c)
+            
+            
+        
